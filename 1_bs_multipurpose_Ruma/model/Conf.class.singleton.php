@@ -1,5 +1,5 @@
 <?php
-	$path=$_SERVER['DOCUMENT_ROOT'].'/6C NewCorlate_alta/';
+	$path=$_SERVER['DOCUMENT_ROOT'].'/1_bs_multipurpose_Ruma/';
     define('SITE_ROOT', $path);
     define('MODEL_PATH',SITE_ROOT.'model/');
 
