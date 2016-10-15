@@ -1,6 +1,6 @@
 <?php
 
-$path = $_SERVER['DOCUMENT_ROOT'] . '/1_bs_multipurpose_Ruma/';
+$path = $_SERVER['DOCUMENT_ROOT'] . '/php/marvelArte_ORM/1_bs_multipurpose_Ruma/';
 define('SITE_ROOT', $path);
 require(SITE_ROOT . "modules/products/model/BLL/product_bll.class.singleton.php");
 

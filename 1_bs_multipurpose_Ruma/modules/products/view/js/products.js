@@ -1,7 +1,7 @@
 
 jQuery.fn.fill_or_clean = function () {//FUNCION PARA LIMPIAR CUANDO FOCUS ESTE ENCIMA
     this.each(function () {
-        if ($("#cod_cuadro").attr("value") == "") {
+        if ($("#cod_cuadro").attr("value") === "") {
             $("#cod_cuadro").attr("value", "Introduce codigo producto");
             $("#cod_cuadro").focus(function () {
                 if ($("#cod_cuadro").attr("value") == "Introduce codigo producto") {
@@ -10,12 +10,12 @@ jQuery.fn.fill_or_clean = function () {//FUNCION PARA LIMPIAR CUANDO FOCUS ESTE 
             });
         }
         $("#cod_cuadro").blur(function () { //Onblur se activa cuando el usuario retira el foco
-            if ($("#cod_cuadro").attr("value") == "") {
+            if ($("#cod_cuadro").attr("value") === "") {
                 $("#cod_cuadro").attr("value", "Introduce codigo producto");
             }
         });
 
-        if ($("#nombre_cuadro").attr("value") == "") {
+        if ($("#nombre_cuadro").attr("value") === "") {
             $("#nombre_cuadro").attr("value", "Introduce nombre del cuadro");
             $("#nombre_cuadro").focus(function () {
                 if ($("#nombre_cuadro").attr("value") == "Introduce nombre del cuadro") {
@@ -24,11 +24,11 @@ jQuery.fn.fill_or_clean = function () {//FUNCION PARA LIMPIAR CUANDO FOCUS ESTE 
             });
         }
         $("#nombre_cuadro").blur(function () {
-            if ($("#nombre_cuadro").attr("value") == "") {
+            if ($("#nombre_cuadro").attr("value") === "") {
                 $("#nombre_cuadro").attr("value", "Introduce nombre del cuadro");
             }
         });
-          if ($("#precio_cuadro").attr("value") == "") {
+          if ($("#precio_cuadro").attr("value") === "") {
             $("#precio_cuadro").attr("value", "Precio");
             $("#precio_cuadro").focus(function () {
                 if ($("#precio_cuadro").attr("value") == "Precio") {
@@ -37,12 +37,12 @@ jQuery.fn.fill_or_clean = function () {//FUNCION PARA LIMPIAR CUANDO FOCUS ESTE 
             });
         }
         $("#precio_cuadro").blur(function () {
-            if ($("#precio_cuadro").attr("value") == "") {
+            if ($("#precio_cuadro").attr("value") === "") {
                 $("#precio_cuadro").attr("value", "Precio");
             }
         });
-        
-        if ($("#fecha_creacion").attr("value") == "") {
+
+        if ($("#fecha_creacion").attr("value") === "") {
             $("#fecha_creacion").attr("value", "Introduce fecha creacion");
             $("#fecha_creacion").focus(function () {
                 if ($("#fecha_creacion").attr("value") == "Introduce fecha creacion") {
@@ -51,11 +51,11 @@ jQuery.fn.fill_or_clean = function () {//FUNCION PARA LIMPIAR CUANDO FOCUS ESTE 
             });
         }
         $("#fecha_creacion").blur(function () {
-            if ($("#fecha_creacion").attr("value") == "") {
+            if ($("#fecha_creacion").attr("value") === "") {
                 $("#fecha_creacion").attr("value", "Introduce fecha creacion");
             }
         });
-        if ($("#fecha_stock").attr("value") == "") {
+        if ($("#fecha_stock").attr("value") === "") {
             $("#fecha_stock").attr("value", "Introduce fecha stock");
             $("#fecha_stock").focus(function () {
                 if ($("#fecha_stock").attr("value") == "Introduce fecha stock") {
@@ -64,11 +64,11 @@ jQuery.fn.fill_or_clean = function () {//FUNCION PARA LIMPIAR CUANDO FOCUS ESTE 
             });
         }
         $("#fecha_stock").blur(function () {
-            if ($("#fecha_stock").attr("value") == "") {
+            if ($("#fecha_stock").attr("value") === "") {
                 $("#fecha_stock").attr("value", "Introduce fecha stock");
             }
         });
-       
+
     });//each
     return this;
 };//function LIMPIAR
@@ -79,7 +79,7 @@ jQuery.fn.fill_or_clean = function () {//FUNCION PARA LIMPIAR CUANDO FOCUS ESTE 
 Dropzone.autoDiscover = false;//Solution to : "Uncaught Error: Dropzone already attached."
 $(document).ready(function () {
    $(this).fill_or_clean(); //CARGAMOS FUNCION LIMPIAR
-    
+
     //Cuando Pulsamos Boton Formulario Validamos Productos
     $('#submit_Products').click(function () {
         validate_products();//
@@ -95,16 +95,16 @@ $(document).ready(function () {
         acceptedFiles: 'image/*,.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF,.rar,application/pdf,.psd',
         init: function () {//Maneja barra de carga y mensaje
             this.on("success", function (file, response) {
-                
+
                 //console.log(response);
-                
+
                 $("#progress").show();
                 $("#bar").width('100%');
                 $("#percent").html('100%');
                 $('.msg').text('').removeClass('msg_error');
                 $('.msg').text('Success Upload image!!').addClass('msg_ok').animate({'right': '300px'}, 300);
-                
-                
+
+
             });
         },
         complete: function (file) {
@@ -122,7 +122,7 @@ $(document).ready(function () {
                 url: "modules/products/controller/controller_products.class.php?delete=true",
                 data: "filename=" + name,
                 success: function (data) {
-                    
+
                     $("#progress").hide();
                     $('.msg').text('').removeClass('msg_ok');
                     $('.msg').text('').removeClass('msg_error');
@@ -153,14 +153,14 @@ $(document).ready(function () {
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
   //Utilizamos las expresiones regulares para las funciones de fadeout
-  
+
     var date_reg = /^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.](19|20)\d\d$/;
     //var date_reg = /^(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d$/;
     var address_reg = /^[a-z0-9- -.]+$/i;
     var pass_reg = /^[0-9a-zA-Z]{6,32}$/;
     var string_reg = /^[A-Za-z]{2,30}$/;
     var usr_reg = /^[0-9a-zA-Z]{2,20}$/;
-    var precio =/^[1-9]{3,8}$/;//PATTERN PRECIO 
+    var precio =/^[1-9]{3,8}$/;//PATTERN PRECIO
     var codigo = /^[A-Za-z]{3}[0-9]{4}$/;//PATTERN CODIGO = 3 letras + 4 números
 
     //realizamos funciones para que sea más práctico nuestro formulario
@@ -171,7 +171,7 @@ $(document).ready(function () {
         }
     });
 
-    
+
     $("#nombre_cuadro").keyup(function () {
         if ($(this).val() != "" && string_reg.test($(this).val())) {
             $(".error").fadeOut();
@@ -203,9 +203,9 @@ $(document).ready(function () {
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 //Función para Validar Productos
 function validate_products() {
-    
+
     var result = true;// inicializamos "result"
-    
+
     //Recogemos todos los valores del formulario para trabajar con el Servidor
     var cod_cuadro = document.getElementById('cod_cuadro').value;
     var nombre_cuadro = document.getElementById('nombre_cuadro').value;
@@ -228,22 +228,22 @@ function validate_products() {
     var material_marco = document.getElementById('material_marco').value;
     var color_marco = document.getElementById('color_marco').value;
     var estilo_marco = document.getElementById('estilo_marco').value;
-    
-    
+
+
     //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
-         
-    //Expresiones Regulares para validar     
+
+    //Expresiones Regulares para validar
     var date_reg = /^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.](19|20)\d\d$/;
     //var date_reg = /^(0[1-9]|1[012])[- \/.](0[1-9]|[12][0-9]|3[01])[- \/.](19|20)\d\d$/;
     var address_reg = /^[a-z0-9- -.]+$/i;
     var pass_reg = /^[0-9a-zA-Z]{6,32}$/;
     var string_reg = /^[A-Za-z]{2,30}$/;
     var usr_reg = /^[0-9a-zA-Z]{2,20}$/;
-    var precio =/^[1-9]{3,8}$/;//PATTERN PRECIO 
+    var precio =/^[1-9]{3,8}$/;//PATTERN PRECIO
     var codigo = /^[A-Za-z]{3}[0-9]{4}$/;//PATTERN CODIGO = 3 letras + 4 números
-        
+
     $(".error").remove();// borramos la clase "error"
-    
+
     if ($("#cod_cuadro").val() == "" || $("#cod_cuadro").val() == "Introduce codigo producto") {
         $("#cod_cuadro").focus().after("<span class='error'>Introduce codigo producto</span>");
         result = false;
@@ -263,7 +263,7 @@ function validate_products() {
         result = false;
         return false;
     }
-    
+
     else if ($("#precio_cuadro").val() == "" || $("#precio_cuadro").val() == "Precio") {
         $("#precio_cuadro").focus().after("<span class='error'>Introduce precio</span>");
         result = false;
@@ -283,7 +283,7 @@ function validate_products() {
         result = false;
         return false;
     }
-        
+
     else if ($("#fecha_stock").val() == "" || $("#fecha_stock").val() == "Introduce fecha stock") {
         $("#fecha_stock").focus().after("<span class='error'>Introduce fecha stock</span>");
         result = false;
@@ -296,40 +296,40 @@ function validate_products() {
 
     //Si todo es CORRECTO "result = true", se envian datos al SERVIDOR
     if (result) {
-        
+
         //Creamos un Array con los datos correctos del formulario.
         var data = {"cod_cuadro": cod_cuadro, "nombre_cuadro":nombre_cuadro,"precio_cuadro":precio_cuadro,"nombre_artista": nombre_artista,
-        "fecha_creacion": fecha_creacion,"fecha_stock": fecha_stock, "dimension_cuadro": dimension_cuadro, "tecnica_cuadro": tecnica_cuadro, 
+        "fecha_creacion": fecha_creacion,"fecha_stock": fecha_stock, "dimension_cuadro": dimension_cuadro, "tecnica_cuadro": tecnica_cuadro,
         "categoria_cuadro": categoria_cuadro, "marco_disponible": marco_disponible, "material_marco": material_marco,"color_marco": color_marco, "estilo_marco": estilo_marco};
-        
+
         //Convertimos Array en JSON.
         var data_products_JSON = JSON.stringify(data);
 
         //Pasamos el JSON al Controller
-        $.post('modules/products/controller/controller_products.class.php',{discharge_products_json: data_products_JSON}, 
-        
+        $.post('modules/products/controller/controller_products.class.php',{discharge_products_json: data_products_JSON},
+
         //utilizamos AJAX para esperar la respuesta "response"
         function (response) {
             //console.log(response);
-            
+
             if (response.success) {
                 window.location.href = response.redirect;
             }
 
         }, "json").fail(function (xhr) {
-            
+
             if (xhr.responseJSON.error.cod_cuadro)
                 $("#cod_cuadro").focus().after("<span class='error1'>" + xhr.responseJSON.error.cod_cuadro + "</span>");
 
             if (xhr.responseJSON.error.nombre_cuadro)
                 $("#nombre_cuadro").focus().after("<span class='error1'>" + xhr.responseJSON.error.nombre_cuadro + "</span>");
-                
+
             if (xhr.responseJSON.error.precio_cuadro)
                 $("#precio_cuadro").focus().after("<span class='error1'>" + xhr.responseJSON.error.precio_cuadro + "</span>");
-            
+
             if (xhr.responseJSON.error.nombre_artista)
                 $("#nombre_artista").focus().after("<span class='error1'>" + xhr.responseJSON.error.nombre_artista + "</span>");
-        
+
             if (xhr.responseJSON.error.fecha_creacion)
                 $("#fecha_creacion").focus().after("<span class='error1'>" + xhr.responseJSON.error.fecha_creacion + "</span>");
 
@@ -377,6 +377,3 @@ function validate_products() {
     }//
 
 }
-
-
-

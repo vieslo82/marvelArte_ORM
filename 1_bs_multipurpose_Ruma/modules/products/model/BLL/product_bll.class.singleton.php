@@ -1,7 +1,7 @@
 <?php
 
-$path = $_SERVER['DOCUMENT_ROOT'] . '/1_bs_multipurpose_Ruma/';
-define('SITE_ROOT', $path);
+$path = $_SERVER['DOCUMENT_ROOT'] . '/php/marvelArte_ORM/1_bs_multipurpose_Ruma/';
+//define('SITE_ROOT', $path);
 define('MODEL_PATH', SITE_ROOT . 'model/');
 
 require (MODEL_PATH . "Db.class.singleton.php");

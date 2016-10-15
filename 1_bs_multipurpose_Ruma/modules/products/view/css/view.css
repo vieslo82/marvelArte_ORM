@@ -63,12 +63,12 @@ form.appnitro
 	padding:0;
 	text-decoration:none;
 	text-indent:-8000px;
-	
+
 }*/
 
 /*h1 a
 {
-	
+
 	display:block;
 	height:100%;
 	min-height:40px;
@@ -327,7 +327,7 @@ span.symbol
 
 input.text
 {
-	background:#fff url(shadow.gif) repeat-x top;
+	background:#fff url('../img/shadow.gif') repeat-x top;
 	border-bottom:1px solid #ddd;
 	border-left:1px solid #c3c3c3;
 	border-right:1px solid #c3c3c3;
@@ -348,7 +348,7 @@ input.file
 
 textarea.textarea
 {
-	background:#fff url(shadow.gif) repeat-x top;
+	background:#fff url('../img/shadow.gif') repeat-x top;
 	border-bottom:1px solid #ddd;
 	border-left:1px solid #c3c3c3;
 	border-right:1px solid #c3c3c3;
@@ -366,7 +366,7 @@ select.select
 	font-size:100%;
 	margin:1px 0;
 	padding:1px 0 0;
-	background:#fff url(shadow.gif) repeat-x top;
+	background:#fff url('../img/shadow.gif') repeat-x top;
 	border-bottom:1px solid #ddd;
 	border-left:1px solid #c3c3c3;
 	border-right:1px solid #c3c3c3;
@@ -588,7 +588,7 @@ form li:hover .guidelines
 }
 
 /*** Success Message ****/
-.form_success 
+.form_success
 {
 	clear: both;
 	margin: 0;
@@ -630,7 +630,7 @@ form li:hover .guidelines
 .embed form.appnitro
 {
 	margin:0px 0px 0;
-	
+
 }
 
 /****products error js*/
@@ -654,7 +654,7 @@ form li:hover .guidelines
     left: -16px;
     position:  absolute;
     top: 5px;
-    
+
 }
 
 /****products error cuando vuelve servidor*/
@@ -678,8 +678,5 @@ form li:hover .guidelines
     left: -16px;
     position:  absolute;
     top: 5px;
-    
+
 }
-
-
-

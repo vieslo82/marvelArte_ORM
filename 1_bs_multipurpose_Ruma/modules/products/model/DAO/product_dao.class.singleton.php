@@ -29,12 +29,13 @@ class productDAO {
         $estilo_marco = $arrArgument['estilo_marco'];
         $avatar = $arrArgument['avatar'];
 
-        $history = 0;
-        $music = 0;
-        $computing = 0;
-        $magic = 0;
+        $oleo = 0;
+        $spray = 0;
+        $pastel = 0;
+        $tinta = 0;
+        $cera = 0;
 
-        foreach ($material_marco as $indice) {
+        foreach ($tecnica_cuadro as $indice) {
             if ($indice === 'oleo')
                 $oleo = 1;
             if ($indice === 'spray')
@@ -48,9 +49,11 @@ class productDAO {
         }
 
         $sql = "INSERT INTO cuadros (Codigo, Titulo, Precio, Artista,"
-                . " Fecha_Creacion, Fecha_Stock, Dimensiones, Oleo, Spray, Pastel, Tinta, Cera, Categoria,Imagen,Marco,Material_Marco,Color_Marco,Estilo_Marco"
-                . " ) VALUES ('$cod_cuadro', '$nombre_cuadro', '$precio_cuadro',"
-                . " '$nombre_artista', '$fecha_creacion', '$fecha_stock', '$dimension_cuadro', '$oleo', '$spray', '$pastel', '$tinta', '$cera', '$categoria_cuadro','$avatar','$marco_disponible','$material_marco','$color_marco','$estilo_marco')";
+                . " Fecha_Creacion, Fecha_Stock, Dimensiones, Oleo, Spray,"
+                . " Pastel, Tinta, Cera, Categoria,Imagen,Marco,Material_Marco,Estilo_Marco, Color_Marco)"
+                . " VALUES ('$cod_cuadro', '$nombre_cuadro', '$precio_cuadro','$nombre_artista',"
+                . " '$fecha_creacion', '$fecha_stock', '$dimension_cuadro', '$oleo', '$spray',"
+                . " '$pastel', '$tinta', '$cera', '$categoria_cuadro','$avatar','$marco_disponible','$material_marco','$estilo_marco','$color_marco')";
 
         return $db->ejecutar($sql);
     }
